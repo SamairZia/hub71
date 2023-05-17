@@ -1,0 +1,195 @@
+@font-face {
+  font-family: PromptBold;
+  src: url(../fonts/Prompt-Bold.ttf);
+}
+
+@font-face {
+  font-family: PromptMedium;
+  src: url(../fonts/Prompt-Medium.ttf);
+}
+
+@font-face {
+  font-family: WorkSansBold;
+  src: url(../fonts/WorkSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: WorkSansExtraBold;
+  src: url(../fonts/WorkSans-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: WorkSansMedium;
+  src: url(../fonts/WorkSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: WorkSansSemiBold;
+  src: url(../fonts/WorkSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: WorkSansNormal;
+  src: url(../fonts/WorkSans-Regular.ttf);
+}
+
+$primary-color: #0026AB;
+$secondary-color-teal: #3AD292;
+$secondary-color-yellow: #FBED24;
+$secondary-color-orange: #EF4123;
+$secondary-color-purple: #743AD0;
+$secondary-color-lightblue: #00AEEF;
+
+$transition-common: all 0.3s ease-in-out;
+$transition-1s: all 1s ease-in-out;
+
+$font-PromptBold: PromptBold, sans-serif;
+$font-PromptMedium: PromptMedium, sans-serif;
+$font-WorkSansSemiBold: WorkSansSemiBold, sans-serif;
+$font-WorkSansNormal: WorkSansNormal, sans-serif;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $font-WorkSansNormal;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out;
+  background: url(../images/common/dotted-banner.png) white repeat;
+  position: relative;
+}
+input,select,textarea,textarea:focus,input:focus,button:focus,select:focus {
+  outline: none;
+}
+h1,h2,h3,h4,h5,h6,p,span,ul,li,a,.table,textarea,label {
+  margin: 0;
+  padding: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,li {
+  list-style: none;
+}
+a, a:hover,a:focus {
+  text-decoration: none;
+}
+.container {
+  max-width: 1440px;
+}
+.theme-color{
+  color: $primary-color;
+}
+
+h1{
+  font-family: $font-PromptBold;
+  color: black;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 136px;
+}
+
+h2{
+  font-family: $font-PromptBold;
+  color: black;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 97px;
+}
+
+h3{
+  font-family: $font-PromptBold;
+  color: black;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+h4{
+  font-family: $font-PromptBold;
+  color: black;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+
+.btn-filled{
+  background: $secondary-color-teal;
+  font-family: $font-WorkSansNormal;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: white; 
+  width: 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: none;
+
+  &::before{
+    position: absolute;
+    // content: '';
+    width: 100%;
+    height: 0%;
+    top: 50%;
+    left: 50%;
+    background-color: #000;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    z-index: -1;
+    transition: $transition-common;
+  }
+
+  &:hover{
+    color: white;
+    &::before{
+      height: 380%;
+    }
+  }
+
+}
+
+
+
+
+h2{
+  font-family: PromptBold;
+}
+
+p{
+  font-family: WorkSansNormal;
+}
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border: 0 none;
+  cursor: pointer;
+
+  span {
+    animation: rEffectAnimation 0.85s linear infinite;
+    transform: translate(-50%, -50%) scale(0);
+    position: absolute;
+    pointer-events: none;
+    background: #fff;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+  }
+}
+
+@keyframes rEffectAnimation {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.75;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
